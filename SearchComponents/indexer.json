@@ -1,0 +1,46 @@
+{
+    "@odata.context": "https://rrk-azure-search-demo.search.windows.net/$metadata#indexers/$entity",
+    "name": "product-indexer",
+    "description": "",
+    "dataSourceName": "azureblob-1747105495473-datasource",
+    "skillsetName": "product-skillset",
+    "targetIndexName": "product-index",
+    "disabled": null,
+    "schedule": null,
+    "parameters": {
+        "batchSize": null,
+        "maxFailedItems": 0,
+        "maxFailedItemsPerBatch": 0,
+        "configuration": {
+            "dataToExtract": "contentAndMetadata",
+            "parsingMode": "default"
+        }
+    },
+    "fieldMappings": [
+        {
+            "sourceFieldName": "metadata_storage_path",
+            "targetFieldName": "metadata_storage_path",
+            "mappingFunction": {
+                "name": "base64Encode"
+            }
+        },
+        {
+            "sourceFieldName": "metadata_storage_path",
+            "targetFieldName": "url"
+        }
+    ],
+    "outputFieldMappings": [
+        {
+            "sourceFieldName": "/document/content/keyphrases",
+            "targetFieldName": "keyphrases"
+        },
+        {
+            "sourceFieldName": "/document/content/products",
+            "targetFieldName": "products"
+        },
+        {
+            "sourceFieldName": "/document/language",
+            "targetFieldName": "language"
+        }
+    ]
+}
