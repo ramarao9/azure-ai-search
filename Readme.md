@@ -53,7 +53,7 @@ python azure-search-rag.py
 ```
 
 ## Documents
-Place your product PDF files in the `Documents/` folder. These will be indexed by the Azure Search indexer.
+Place your product PDF files in the `Documents/` folder. These will be indexed by the Azure Search indexer. The folder has some documents you could use for your testing as well.
 
 ## SearchComponents
 - `index.json` – Defines the Azure Search index schema
