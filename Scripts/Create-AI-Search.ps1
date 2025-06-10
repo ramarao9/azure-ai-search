@@ -18,7 +18,7 @@ param (
 
     [Parameter(HelpMessage="Enter the SKU (pricing tier). Valid values: free, basic, standard, standard2, standard3, storage_optimized_l1, storage_optimized_l2. Default is 'basic'.")]
     [ValidateSet("free", "basic", "standard", "standard2", "standard3", "storage_optimized_l1", "storage_optimized_l2")]
-    [string]$Sku = "basic"
+    [string]$Sku = "free"
 )
 
 # Begin script execution

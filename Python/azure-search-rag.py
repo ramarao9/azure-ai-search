@@ -16,10 +16,6 @@ def main():
     AZURE_SEARCH_SERVICE = os.getenv("AZURE_SEARCH_SERVICE")
     AZURE_DEPLOYMENT_MODEL = os.getenv("AZURE_DEPLOYMENT_MODEL")
 
-    print(f"AZURE_OPENAI_ACCOUNT: {AZURE_OPENAI_ACCOUNT}")
-    print(f"AZURE_SEARCH_SERVICE: {AZURE_SEARCH_SERVICE}")
-    print(f"AZURE_DEPLOYMENT_MODEL: {AZURE_DEPLOYMENT_MODEL}")
-
     credential = DefaultAzureCredential()
 
     token_provider = get_bearer_token_provider(
@@ -57,7 +53,8 @@ def main():
     # Search results include the top 10 matches to your query
     search_results = search_client.search(
         search_text=query,
-        top=10,
+        search_mode="any",
+        search_fields=["products,content,keyphrases"],
         select="keyphrases,content,products,url,metadata_storage_name",
     )
 

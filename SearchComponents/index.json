@@ -188,34 +188,5 @@
             "synonymMaps": [],
             "fields": []
         }
-    ],
-    "similarity": {
-        "@odata.type": "#Microsoft.Azure.Search.BM25Similarity"
-    },
-    "semantic": {
-        "defaultConfiguration": "semantic-config",
-        "configurations": [
-            {
-                "name": "semantic-config",
-                "prioritizedFields": {
-                    "titleField": {
-                        "fieldName": "HotelName"
-                    },
-                    "prioritizedContentFields": [
-                        {
-                            "fieldName": "Description"
-                        }
-                    ],
-                    "prioritizedKeywordsFields": [
-                        {
-                            "fieldName": "Category"
-                        },
-                        {
-                            "fieldName": "Tags"
-                        }
-                    ]
-                }
-            }
-        ]
-    },
+    ]
 }
